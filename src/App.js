@@ -33,8 +33,8 @@ const App = () => {
                 onClick={() => setOpen(!isOpen)}
               ></button>
             </div>
-            <a className="neo-navbar__brand" title="Neo Framework">
-              <img src={logo} />
+            <a href={"/"} className="neo-navbar__brand" title="Neo Framework">
+              <img src={logo} alt={"avaya logo"} />
             </a>
 
             <NeoCheckbox label={"Dark theme"} onChange={setDarkTheme} />

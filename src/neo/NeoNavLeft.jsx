@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NeoNavLeft = ({ open = true, onClick }) => {
@@ -17,17 +17,17 @@ const NeoNavLeft = ({ open = true, onClick }) => {
              
 
               <li className="neo-leftnav__main">
-                <Link role="menuitem" tabindex="1" to="/" onClick={onClick}>
+                <Link role="menuitem" tabIndex="1" to="/" onClick={onClick}>
                   Home
                 </Link>
               </li>
               <li className="neo-leftnav__main">
-                <Link role="menuitem" tabindex="0" to="/buttons" onClick={onClick}>
+                <Link role="menuitem" tabIndex="0" to="/buttons" onClick={onClick}>
                   Buttons
                 </Link>
               </li>
               <li className="neo-leftnav__main">
-                <Link role="menuitem" tabindex="0" to="/tooltips" onClick={onClick}>
+                <Link role="menuitem" tabIndex="0" to="/tooltips" onClick={onClick}>
                   Tooltips
                 </Link>
               </li>

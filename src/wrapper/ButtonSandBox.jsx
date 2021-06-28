@@ -5,20 +5,19 @@ import "./ButtonSandBox.css";
 import { NeoButton, NeoCheckbox, NeoRadioGroup, NeoSelectBox } from "../neo";
 
 const ButtonSandBox = () => {
-  const [isPrimary, setPrimary] = useState(false);
-  const [isSecondary, setSecondary] = useState(false);
-  const [isTertiary, setTertiary] = useState(false);
+ 
   const [isDisable, setDisable] = useState(false);
   const [isPulse, setPulse] = useState(false);
-  const [isCompact, setCompact] = useState(false);
-  const [isWide, setWide] = useState(false);
-  const [isInline, setInline] = useState(false);
+
   const [isSpinner, setSpinner] = useState(false);
   
-
   const [icon, setIcon] = useState();
 
-  const [buttonType, setButtonType] = useState("default");
+  const [buttonShape, setButtonShape] = useState("default");
+  const [buttonText, setButtonText] = useState("Text");
+  const [buttonStatus, setButtonStatus] = useState("default");
+  const [buttonType, setButtonType] = useState("primary");
+  const [buttonSize, setButtonSize] = useState("default");
 
   const clickHandler = () => {
     console.log("clickHandler");
@@ -31,115 +30,77 @@ const ButtonSandBox = () => {
          Buttons Sandbox
         </h4>
         <div className={"buttons-container"}>
-          <form className={isInline ? "neo-form neo-form--inline" : "neo-form"}>
+          
             <div className={"button-box"}>
               <NeoButton
-                status="default"
+                status={buttonStatus}
                 text={"default"}
                 onClick={clickHandler}
-                primary={isPrimary}
-                secondary={isSecondary}
-                tertiary={isTertiary}
+                type={buttonType}
                 disabled={isDisable}
                 pulse={isPulse}
-                compact={isCompact}
-                wide={isWide}
-                type={buttonType}
+                size={buttonSize}
+                shape={buttonShape}
                 icon={icon}
                 spinner={isSpinner}
               >
-                Default
+                {buttonText}
               </NeoButton>
-            </div>
-            <div className={"button-box"}>
-              <NeoButton
-                status="success"
-                onClick={clickHandler}
-                primary={isPrimary}
-                secondary={isSecondary}
-                tertiary={isTertiary}
-                disabled={isDisable}
-                pulse={isPulse}
-                compact={isCompact}
-                wide={isWide}
-                type={buttonType}
-                icon={icon}
-                spinner={isSpinner}
-              >
-                Success
-              </NeoButton>
-            </div>
-            <div className={"button-box"}>
-              <NeoButton
-                status="alert"
-                onClick={clickHandler}
-                primary={isPrimary}
-                secondary={isSecondary}
-                tertiary={isTertiary}
-                disabled={isDisable}
-                pulse={isPulse}
-                compact={isCompact}
-                wide={isWide}
-                type={buttonType}
-                icon={icon}
-                spinner={isSpinner}
-              >
-                Alert
-              </NeoButton>
-            </div>
-            <div className={"button-box"}>
-              <NeoButton
-                status="warning"
-                onClick={clickHandler}
-                primary={isPrimary}
-                secondary={isSecondary}
-                tertiary={isTertiary}
-                disabled={isDisable}
-                pulse={isPulse}
-                compact={isCompact}
-                wide={isWide}
-                type={buttonType}
-                icon={icon}
-                spinner={isSpinner}
-              >
-                warning
-              </NeoButton>
-            </div>
-            <div className={"button-box"}>
-              <NeoButton
-                status="info"
-                onClick={clickHandler}
-                primary={isPrimary}
-                secondary={isSecondary}
-                tertiary={isTertiary}
-                disabled={isDisable}
-                pulse={isPulse}
-                compact={isCompact}
-                wide={isWide}
-                type={buttonType}
-                icon={icon}
-                spinner={isSpinner}
-              >
-                info
-              </NeoButton>
-            </div>
-          </form>
+            </div>         
         </div>
       </div>
 
       <div className={"settings-panel"}>
-        <NeoCheckbox label={"InLine"} onChange={setInline} />
-        <NeoCheckbox label={"Primary"} onChange={setPrimary} />
-        <NeoCheckbox label={"Secondary"} onChange={setSecondary} />
-        <NeoCheckbox label={"Tertiary"} onChange={setTertiary} />
+       
+       
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
         <NeoCheckbox label={"Pulse"} onChange={setPulse} />
-        <NeoCheckbox label={"Compact"} onChange={setCompact} />
-        <NeoCheckbox label={"Wide"} onChange={setWide} />
         <NeoCheckbox label={"Spinner"} onChange={setSpinner} />
+
+        <textarea
+          onChange={(e) => setButtonText(e.target.value)}
+          rows="4"
+          defaultValue={buttonText}
+        />
+        <br />
+
+        <NeoRadioGroup
+          onChange={setButtonSize}
+          label={"Size"}
+          options={[
+            { name: "Default", value: "default" },
+            { name: "Compact", value: "compact" },
+            { name: "Wide", value: "wide" },
+          ]}
+        />
+        <br />
+
         <NeoRadioGroup
           onChange={setButtonType}
           label={"Type"}
+          options={[
+            { name: "Primary", value: "primary" },
+            { name: "Secondary", value: "secondary" },
+            { name: "Tertiary", value: "tertiary" },
+          ]}
+        />
+        <br />
+
+        <NeoRadioGroup
+          onChange={setButtonStatus}
+          label={"Status"}
+          options={[
+            { name: "Default", value: "default" },
+            { name: "Success", value: "success" },
+            { name: "Alert", value: "alert" },
+            { name: "Warning", value: "warning" },
+            { name: "Info", value: "info" },
+          ]}
+        />
+        <br />
+        <NeoRadioGroup
+          onChange={setButtonShape}
+          label={"Shape"}
           options={[
             { name: "Default", value: "default" },
             { name: "Circle", value: "circle" },

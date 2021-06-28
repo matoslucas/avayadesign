@@ -23,13 +23,20 @@
 
 .buttons-container {
   width: clamp(10rem, 34rem, 38rem);
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0.5rem;
 }
 .button-box {
   margin: 0.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .tooltip-box {
   display: flex;

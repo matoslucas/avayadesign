@@ -1,12 +1,9 @@
 const NeoButton = ({
-  type,
-  compact,
+  shape,
+  size,
   pulse,
-  primary,
-  secondary,
-  tertiary,
+  type,
   disabled,
-  wide,
   icon,
   status,
   onClick,
@@ -18,43 +15,48 @@ const NeoButton = ({
 
   let ariaLabel = "";
 
-  if (primary) {
-    classArray.push("neo-btn-primary");
-    classArray.push(`neo-btn-primary--${status}`);
-  }
-
-  if (secondary) {
-    classArray.push("neo-btn-secondary");
-    classArray.push(`neo-btn-secondary--${status}`);
-  }
-
-  if (tertiary) {
-    classArray.push("neo-btn-tertiary");
-    classArray.push(`neo-btn-tertiary--${status}`);
+  switch (type) {
+    case "primary":
+      classArray.push("neo-btn-primary");
+      classArray.push(`neo-btn-primary--${status}`);
+      break;
+    case "secondary":
+      classArray.push("neo-btn-secondary");
+      classArray.push(`neo-btn-secondary--${status}`);
+      break;
+    case "tertiary":
+      classArray.push("neo-btn-tertiary");
+      classArray.push(`neo-btn-tertiary--${status}`);
+      break;
+    default:
   }
 
   if (typeof children === "string" || children instanceof String) {
     ariaLabel = children;
   }
 
-  if (type === "circle") {
-    classArray = classArray.map((item) =>
-      item.replace("neo-btn", "neo-btn-circle")
-    );
+  switch (shape) {
+    case "circle":
+      classArray = classArray.map((item) =>
+        item.replace("neo-btn", "neo-btn-circle")
+      );
+      break;
+    case "square":
+      classArray = classArray.map((item) =>
+        item.replace("neo-btn", "neo-btn-square")
+      );
+      break;
+    default:
   }
 
-  if (type === "square") {
-    classArray = classArray.map((item) =>
-      item.replace("neo-btn", "neo-btn-square")
-    );
-  }
-
-  if (compact) {
-    classArray.push("neo-btn--compact");
-  }
-
-  if (wide) {
-    classArray.push("neo-btn--wide");
+  switch (size) {
+    case "compact":
+      classArray.push("neo-btn--compact");
+      break;
+    case "wide":
+      classArray.push("neo-btn--wide");
+      break;
+    default:
   }
 
   if (pulse) {
@@ -65,7 +67,7 @@ const NeoButton = ({
     classArray.push(icon);
   }
 
-  switch (type) {
+  switch (shape) {
     case "circle":
     case "square":
       toRet = (
@@ -84,8 +86,8 @@ const NeoButton = ({
           onClick={onClick}
           disabled={disabled}
         >
-          {spinner?<span class="neo-spinner"></span>:null}
-          
+          {spinner ? <span className="neo-spinner"></span> : null}
+
           {children}
         </button>
       );
