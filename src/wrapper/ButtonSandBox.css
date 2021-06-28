@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.main h4 {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.settings-panel {
+  display: flex;
+  width: clamp(11rem, 12rem, 16rem);
+  flex-direction: column;
+  border: 1px dashed #979696;
+  padding: 1rem;
+}
+.sandbox {
+  padding: 1rem;
+  border: 1px dashed #979696;
+  border-right: none;
+}
+
+.buttons-container {
+  width: clamp(10rem, 34rem, 38rem);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.button-box {
+  margin: 0.5rem;
+}
+.tooltip-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}

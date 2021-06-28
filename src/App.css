@@ -1,0 +1,12 @@
+.layout-box {
+  display: flex;
+}
+.left-menu {
+  position: fixed;
+  left: -100%;
+  transition: 0.4s;
+}
+.active {
+  left: 0;
+  transition: 0.4s;
+}
