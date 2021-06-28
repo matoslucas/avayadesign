@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/avayadesign/static/css/main.3b8c8b48.chunk.css",
-    "main.js": "/avayadesign/static/js/main.1d097ec0.chunk.js",
-    "main.js.map": "/avayadesign/static/js/main.1d097ec0.chunk.js.map",
+    "main.css": "/avayadesign/static/css/main.30013e7e.chunk.css",
+    "main.js": "/avayadesign/static/js/main.8c75099f.chunk.js",
+    "main.js.map": "/avayadesign/static/js/main.8c75099f.chunk.js.map",
     "runtime-main.js": "/avayadesign/static/js/runtime-main.12d67046.js",
     "runtime-main.js.map": "/avayadesign/static/js/runtime-main.12d67046.js.map",
     "static/css/2.b38a5cd6.chunk.css": "/avayadesign/static/css/2.b38a5cd6.chunk.css",
-    "static/js/2.60fde08a.chunk.js": "/avayadesign/static/js/2.60fde08a.chunk.js",
-    "static/js/2.60fde08a.chunk.js.map": "/avayadesign/static/js/2.60fde08a.chunk.js.map",
+    "static/js/2.e7f8af99.chunk.js": "/avayadesign/static/js/2.e7f8af99.chunk.js",
+    "static/js/2.e7f8af99.chunk.js.map": "/avayadesign/static/js/2.e7f8af99.chunk.js.map",
     "index.html": "/avayadesign/index.html",
     "static/css/2.b38a5cd6.chunk.css.map": "/avayadesign/static/css/2.b38a5cd6.chunk.css.map",
-    "static/css/main.3b8c8b48.chunk.css.map": "/avayadesign/static/css/main.3b8c8b48.chunk.css.map",
-    "static/js/2.60fde08a.chunk.js.LICENSE.txt": "/avayadesign/static/js/2.60fde08a.chunk.js.LICENSE.txt",
+    "static/css/main.30013e7e.chunk.css.map": "/avayadesign/static/css/main.30013e7e.chunk.css.map",
+    "static/js/2.e7f8af99.chunk.js.LICENSE.txt": "/avayadesign/static/js/2.e7f8af99.chunk.js.LICENSE.txt",
     "static/media/avaya-logo-header.a9a54b62.svg": "/avayadesign/static/media/avaya-logo-header.a9a54b62.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.12d67046.js",
     "static/css/2.b38a5cd6.chunk.css",
-    "static/js/2.60fde08a.chunk.js",
-    "static/css/main.3b8c8b48.chunk.css",
-    "static/js/main.1d097ec0.chunk.js"
+    "static/js/2.e7f8af99.chunk.js",
+    "static/css/main.30013e7e.chunk.css",
+    "static/js/main.8c75099f.chunk.js"
   ]
 }
