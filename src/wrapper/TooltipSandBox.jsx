@@ -41,7 +41,7 @@ const TooltipSandBox = () => {
                   status="default"
                   text={"default"}
                   onClick={clickHandler}
-                  primary={true}
+                  type={"primary"}
                 >
                   Tooltip
                 </NeoButton>

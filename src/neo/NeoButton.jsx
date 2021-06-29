@@ -70,6 +70,10 @@ const NeoButton = ({
   switch (shape) {
     case "circle":
     case "square":
+      // display warning
+      if (!icon || icon==="false") {
+        console.warn("Icon is required");
+      }
       toRet = (
         <button
           className={classArray.join(" ")}

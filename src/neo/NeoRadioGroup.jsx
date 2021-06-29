@@ -18,6 +18,7 @@ const NeoRadioGroup = ({ options, label, onChange, name = uuid_v4() }) => {
                     value={radio.value}
                     id={internalId}
                     onChange={(e) => onChange(e.target.value)}
+                    defaultChecked={index===0?true:false}
                   />
                   <label htmlFor={internalId}>{radio.name}</label>
                 </div>

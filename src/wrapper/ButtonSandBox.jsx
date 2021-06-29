@@ -11,12 +11,12 @@ const ButtonSandBox = () => {
 
   const [isSpinner, setSpinner] = useState(false);
   
-  const [icon, setIcon] = useState();
+  const [icon, setIcon] = useState(false);
 
   const [buttonShape, setButtonShape] = useState("default");
   const [buttonText, setButtonText] = useState("Text");
   const [buttonStatus, setButtonStatus] = useState("default");
-  const [buttonType, setButtonType] = useState("primary");
+  const [buttonType, setButtonType] = useState("default");
   const [buttonSize, setButtonSize] = useState("default");
 
   const clickHandler = () => {
@@ -79,6 +79,7 @@ const ButtonSandBox = () => {
           onChange={setButtonType}
           label={"Type"}
           options={[
+            { name: "Default", value: "default" },
             { name: "Primary", value: "primary" },
             { name: "Secondary", value: "secondary" },
             { name: "Tertiary", value: "tertiary" },
@@ -113,7 +114,7 @@ const ButtonSandBox = () => {
           label={"Icon"}
           hint={"Select icon name"}
           options={[
-            { label: "select value", value: "none" },
+            { label: "select value", value: false},
 
             { label: "settings", value: "neo-icon-settings" },
             { label: "error", value: "neo-icon-error" },
