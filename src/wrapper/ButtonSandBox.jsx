@@ -27,7 +27,7 @@ const ButtonSandBox = () => {
   const clickHandler = () => {
     console.log("clickHandler");
   };
-  console.log(icon);
+
 
   return (
     <div className="main">
