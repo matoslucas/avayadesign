@@ -109,6 +109,7 @@ const ButtonSandBox = () => {
         <NeoSelectBox
           onChange={setIcon}
           label={"Icon"}
+          error={buttonShape !== "default"?true: false}
           hint={"Select icon name"}
           options={[
             { label: "select value", value: false },

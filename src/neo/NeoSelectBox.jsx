@@ -2,10 +2,16 @@ import { useState } from "react";
 import { v4 as uuid_v4 } from "uuid";
 
 
-const NeoSelectBox = ({ label, options, hint, onChange }) => {
+const NeoSelectBox = ({ label, options, hint, onChange, error}) => {
     const [value, setValue] = useState(options?options[0].value:0);
+    let classArray = ["neo-form-control"];
+
+    if(error){
+      classArray.push("neo-form-control--error");
+    }
+   
   return (
-    <div className="neo-form-control">
+    <div className={ classArray.join(" ")}>
       <div className="neo-input-group">
         {label ? <label htmlFor="color1">{label}</label> : null}
 
