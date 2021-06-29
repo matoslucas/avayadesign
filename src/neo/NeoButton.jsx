@@ -91,8 +91,7 @@ const NeoButton = ({
           disabled={disabled}
         >
           {spinner ? <span className="neo-spinner"></span> : null}
-
-          {children}
+          <div dangerouslySetInnerHTML={{__html: children}} />
         </button>
       );
   }

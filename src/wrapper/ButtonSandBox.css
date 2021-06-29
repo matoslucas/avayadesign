@@ -10,7 +10,7 @@
 }
 .settings-panel {
   display: flex;
-  width: clamp(11rem, 12rem, 16rem);
+  width: clamp(13rem, 14rem, 16rem);
   flex-direction: column;
   border: 1px dashed #979696;
   padding: 1rem;

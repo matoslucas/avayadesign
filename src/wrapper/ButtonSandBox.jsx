@@ -2,15 +2,20 @@ import { useState } from "react";
 import "@avaya/neo/neo/dist/css/neo/neo.min.css";
 import "./ButtonSandBox.css";
 
-import { NeoButton, NeoCheckbox, NeoRadioGroup, NeoSelectBox } from "../neo";
+import {
+  NeoButton,
+  NeoCheckbox,
+  NeoRadioGroup,
+  NeoSelectBox,
+  NeoTextarea,
+} from "../neo";
 
 const ButtonSandBox = () => {
- 
   const [isDisable, setDisable] = useState(false);
   const [isPulse, setPulse] = useState(false);
 
   const [isSpinner, setSpinner] = useState(false);
-  
+
   const [icon, setIcon] = useState(false);
 
   const [buttonShape, setButtonShape] = useState("default");
@@ -26,44 +31,36 @@ const ButtonSandBox = () => {
   return (
     <div className="main">
       <div className={"sandbox"}>
-        <h4>
-         Buttons Sandbox
-        </h4>
+        <h4>Buttons Sandbox</h4>
         <div className={"buttons-container"}>
-          
-            <div className={"button-box"}>
-              <NeoButton
-                status={buttonStatus}
-                text={"default"}
-                onClick={clickHandler}
-                type={buttonType}
-                disabled={isDisable}
-                pulse={isPulse}
-                size={buttonSize}
-                shape={buttonShape}
-                icon={icon}
-                spinner={isSpinner}
-              >
-                {buttonText}
-              </NeoButton>
-            </div>         
+          <div className={"button-box"}>
+            <NeoButton
+              status={buttonStatus}
+              text={"default"}
+              onClick={clickHandler}
+              type={buttonType}
+              disabled={isDisable}
+              pulse={isPulse}
+              size={buttonSize}
+              shape={buttonShape}
+              icon={icon}
+              spinner={isSpinner}
+            >
+              {buttonText}
+            </NeoButton>
+          </div>
         </div>
       </div>
 
       <div className={"settings-panel"}>
-       
-       
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
         <NeoCheckbox label={"Pulse"} onChange={setPulse} />
         <NeoCheckbox label={"Spinner"} onChange={setSpinner} />
-
-        <textarea
-          onChange={(e) => setButtonText(e.target.value)}
-          rows="4"
+        <NeoTextarea
+          label={"Content"}
+          onChange={setButtonText}
           defaultValue={buttonText}
         />
-        <br />
-
         <NeoRadioGroup
           onChange={setButtonSize}
           label={"Size"}
@@ -114,7 +111,7 @@ const ButtonSandBox = () => {
           label={"Icon"}
           hint={"Select icon name"}
           options={[
-            { label: "select value", value: false},
+            { label: "select value", value: false },
 
             { label: "settings", value: "neo-icon-settings" },
             { label: "error", value: "neo-icon-error" },

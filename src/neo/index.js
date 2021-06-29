@@ -6,6 +6,7 @@ import NeoNavLeftButton from "./NeoNavLeftButton";
 import NeoRadioGroup from "./NeoRadioGroup";
 import NeoSelectBox from "./NeoSelectBox";
 import NeoTooltip from "./NeoTooltip";
+import NeoTextarea from "./NeoTextarea";
 
 export {
   NeoButton,
@@ -15,5 +16,6 @@ export {
   NeoNavLeftButton,
   NeoRadioGroup,
   NeoSelectBox,
+  NeoTextarea,
   NeoTooltip,
 };
