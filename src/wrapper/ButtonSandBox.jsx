@@ -37,7 +37,6 @@ const ButtonSandBox = () => {
           <div className={"button-box"}>
             <NeoButton
               status={buttonStatus}
-              text={"default"}
               onClick={clickHandler}
               type={buttonType}
               disabled={isDisable}

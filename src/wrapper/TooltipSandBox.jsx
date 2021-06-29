@@ -6,7 +6,7 @@ import {
   NeoButton,
   NeoCheckbox,
   NeoRadioGroup,
-  // NeoSelectBox,
+  NeoTextarea,
   NeoTooltip,
 } from "../neo";
 
@@ -53,12 +53,11 @@ const TooltipSandBox = () => {
 
       <div className={"settings-panel"}>
         <NeoCheckbox label={"Is Multiline"} onChange={setMultiline} />
-        <textarea
-          onChange={(e) => setTooltipText(e.target.value)}
-          rows="6"
+        <NeoTextarea
+          onChange={setTooltipText}
           defaultValue={tooltipText}
+          rows="4"
         />
-        <br />
 
         <NeoRadioGroup
           onChange={setPosition}
@@ -69,7 +68,7 @@ const TooltipSandBox = () => {
             { name: "Up", value: "up" },
             { name: "Up Right", value: "up-right" },
             { name: "Up Left", value: "up-left" },
-            
+
             { name: "Down", value: "down" },
             { name: "Down Right", value: "down-right" },
             { name: "Down Left", value: "down-left" },

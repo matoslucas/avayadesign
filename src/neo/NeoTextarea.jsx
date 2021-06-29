@@ -8,6 +8,8 @@ const NeoTextarea = ({
   maxlength = 300,
   defaultValue = "",
   onChange,
+  cols,
+  rows,
 }) => {
   const internalId = uuid_v4();
   const [value, updateValue] = useState(defaultValue);
@@ -29,6 +31,8 @@ const NeoTextarea = ({
         <textarea
           id={internalId}
           className="neo-input"
+          cols={cols}
+          rows={rows}
           placeholder={placeholder}
           type="text"
           aria-describedby={hint}
