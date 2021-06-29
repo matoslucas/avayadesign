@@ -11,7 +11,7 @@ const NeoTextarea = ({
 }) => {
   const internalId = uuid_v4();
   const [value, updateValue] = useState(defaultValue);
-  const [counter, updateCounter] = useState(0);
+  const [counter, updateCounter] = useState(defaultValue.length);
 
   const onChangeHandler = (value) => {
     updateValue(value);
