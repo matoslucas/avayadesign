@@ -27,6 +27,7 @@ const ButtonSandBox = () => {
   const clickHandler = () => {
     console.log("clickHandler");
   };
+  console.log(icon);
 
   return (
     <div className="main">
@@ -109,7 +110,11 @@ const ButtonSandBox = () => {
         <NeoSelectBox
           onChange={setIcon}
           label={"Icon"}
-          error={buttonShape !== "default"?true: false}
+          error={
+            buttonShape !== "default" && (!icon || icon === "false")
+              ? true
+              : false
+          }
           hint={"Select icon name"}
           options={[
             { label: "select value", value: false },

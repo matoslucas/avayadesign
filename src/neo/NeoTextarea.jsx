@@ -24,7 +24,7 @@ const NeoTextarea = ({
   return (
     <div className="neo-form-control neo-form-control--textarea">
       <div className="neo-input-group">
-        {label ? <label for={internalId}>{label}</label> : null}
+        {label ? <label htmlFor={internalId}>{label}</label> : null}
 
         <textarea
           id={internalId}
