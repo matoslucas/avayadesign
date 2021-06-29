@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/avayadesign/static/css/main.30013e7e.chunk.css",
-    "main.js": "/avayadesign/static/js/main.8c75099f.chunk.js",
-    "main.js.map": "/avayadesign/static/js/main.8c75099f.chunk.js.map",
+    "main.js": "/avayadesign/static/js/main.490868e4.chunk.js",
+    "main.js.map": "/avayadesign/static/js/main.490868e4.chunk.js.map",
     "runtime-main.js": "/avayadesign/static/js/runtime-main.12d67046.js",
     "runtime-main.js.map": "/avayadesign/static/js/runtime-main.12d67046.js.map",
     "static/css/2.b38a5cd6.chunk.css": "/avayadesign/static/css/2.b38a5cd6.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.b38a5cd6.chunk.css",
     "static/js/2.e7f8af99.chunk.js",
     "static/css/main.30013e7e.chunk.css",
-    "static/js/main.8c75099f.chunk.js"
+    "static/js/main.490868e4.chunk.js"
   ]
 }
