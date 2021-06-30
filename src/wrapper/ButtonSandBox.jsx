@@ -28,16 +28,21 @@ const ButtonSandBox = () => {
     console.log("clickHandler");
   };
 
-  const updateShapeHandler = (value) =>{
+  const updateShapeHandler = (value) => {
     setButtonShape(value);
-    if(value === "circle" || value === "square"){
-        setIcon("neo-icon-settings")
-    } else{
-        setIcon(false);
+   
+    if (value === "circle" && (!icon || icon === "false")) {
+      setIcon("neo-icon-add");
     }
-    
-  }
 
+    if (value === "square" && (!icon || icon === "false")) {
+      setIcon("neo-icon-settings");
+    }
+
+    if (value === "default") {
+      setIcon(false);
+    }
+  };
 
   return (
     <div className="main">

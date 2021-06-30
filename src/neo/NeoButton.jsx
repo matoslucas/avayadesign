@@ -72,7 +72,7 @@ const NeoButton = ({
     case "square":
       // display warning
       if (!icon || icon==="false") {
-        console.warn("Icon is required");
+        console.warn("An icon is required");
       }
       toRet = (
         <button
