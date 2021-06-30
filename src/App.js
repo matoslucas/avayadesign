@@ -22,7 +22,7 @@ const App = () => {
         className={
           isDarktheme
             ? "neo-dark neo-global-colors"
-            : "neo-dynamic neo-global-colors"
+            : "neo-light neo-global-colors"
         }
       >
         <NeoNavBar>
