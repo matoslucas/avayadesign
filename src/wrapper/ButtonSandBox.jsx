@@ -28,6 +28,16 @@ const ButtonSandBox = () => {
     console.log("clickHandler");
   };
 
+  const updateShapeHandler = (value) =>{
+    setButtonShape(value);
+    if(value === "circle" || value === "square"){
+        setIcon("neo-icon-settings")
+    } else{
+        setIcon(false);
+    }
+    
+  }
+
 
   return (
     <div className="main">
@@ -96,7 +106,7 @@ const ButtonSandBox = () => {
         />
         <br />
         <NeoRadioGroup
-          onChange={setButtonShape}
+          onChange={updateShapeHandler}
           label={"Shape"}
           options={[
             { name: "Default", value: "default" },
@@ -107,6 +117,7 @@ const ButtonSandBox = () => {
         <br />
         <NeoSelectBox
           onChange={setIcon}
+          selected={icon}
           label={"Icon"}
           error={
             buttonShape !== "default" && (!icon || icon === "false")

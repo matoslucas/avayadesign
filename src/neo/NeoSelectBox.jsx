@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { v4 as uuid_v4 } from "uuid";
 
+const NeoSelectBox = ({ label, options, selected, hint, onChange, error }) => {
 
-const NeoSelectBox = ({ label, options, hint, onChange, error}) => {
-    const [value, setValue] = useState(options?options[0].value:0);
-    let classArray = ["neo-form-control"];
+  const [value, setValue] = useState(selected ? selected: options[0].value );
 
-    if(error){
-      classArray.push("neo-form-control--error");
-    }
-   
+  const previousValueRef = useRef();
+  const previousValue = previousValueRef.current;
+
+  if (selected !== previousValue && selected !== value) {
+    setValue(selected);
+  }
+  
+  useEffect(() => {
+    previousValueRef.current = selected;
+  });
+
+  let classArray = ["neo-form-control"];
+
+  if (error) {
+    classArray.push("neo-form-control--error");
+  }
+
   return (
-    <div className={ classArray.join(" ")}>
+    <div className={classArray.join(" ")}>
       <div className="neo-input-group">
         {label ? <label htmlFor="color1">{label}</label> : null}
 
@@ -21,13 +33,15 @@ const NeoSelectBox = ({ label, options, hint, onChange, error}) => {
             aria-describedby={label}
             value={value}
             onChange={(e) => {
-                setValue(e.target.value);
+              setValue(e.target.value);
+              if (onChange) {
                 onChange(e.target.value);
+              }
             }}
           >
             {options
               ? options.map((option) => {
-                  const internalId =  uuid_v4();
+                  const internalId = uuid_v4();
                   return (
                     <option key={internalId} value={option.value}>
                       {option.label}
