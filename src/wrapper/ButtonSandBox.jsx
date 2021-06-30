@@ -21,7 +21,7 @@ const ButtonSandBox = () => {
   const [buttonShape, setButtonShape] = useState("default");
   const [buttonText, setButtonText] = useState("Text");
   const [buttonStatus, setButtonStatus] = useState("default");
-  const [buttonType, setButtonType] = useState("default");
+  const [buttonType, setButtonType] = useState("primary");
   const [buttonSize, setButtonSize] = useState("default");
 
   const clickHandler = () => {
@@ -76,7 +76,6 @@ const ButtonSandBox = () => {
           onChange={setButtonType}
           label={"Type"}
           options={[
-            { name: "Default", value: "default" },
             { name: "Primary", value: "primary" },
             { name: "Secondary", value: "secondary" },
             { name: "Tertiary", value: "tertiary" },
