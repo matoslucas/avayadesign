@@ -64,7 +64,7 @@ const NeoButton = ({
   }
 
   if (icon) {
-    classArray.push(icon);
+    classArray.push(`neo-icon-${icon}`);
   }
 
   switch (shape) {

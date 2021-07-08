@@ -31,6 +31,11 @@ const NeoNavLeft = ({ open = true, onClick }) => {
                   Tooltips
                 </Link>
               </li>
+              <li className="neo-leftnav__main">
+                <Link role="menuitem" tabIndex="0" to="/icons" onClick={onClick}>
+                  Icons
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

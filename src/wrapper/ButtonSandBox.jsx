@@ -32,11 +32,11 @@ const ButtonSandBox = () => {
     setButtonShape(value);
    
     if (value === "circle" && (!icon || icon === "false")) {
-      setIcon("neo-icon-add");
+      setIcon("add");
     }
 
     if (value === "square" && (!icon || icon === "false")) {
-      setIcon("neo-icon-settings");
+      setIcon("settings");
     }
 
     if (value === "default") {
@@ -132,21 +132,21 @@ const ButtonSandBox = () => {
           hint={"Select icon name"}
           options={[
             { label: "select value", value: false },
-
-            { label: "settings", value: "neo-icon-settings" },
-            { label: "error", value: "neo-icon-error" },
-            { label: "chat", value: "neo-icon-chat" },
-            { label: "add", value: "neo-icon-add" },
-            { label: "add-circle", value: "neo-icon-add-circle" },
-            { label: "address", value: "neo-icon-address" },
-            { label: "address-book", value: "neo-icon-address-book" },
-            { label: "agents", value: "neo-icon-agents" },
-            { label: "analytics", value: "neo-icon-analytics" },
-            { label: "available", value: "neo-icon-available" },
-            { label: "available-filled", value: "neo-icon-available-filled" },
-            { label: "away", value: "neo-icon-away" },
-            { label: "away-filled", value: "neo-icon-away-filled" },
-            { label: "bot", value: "neo-icon-bot" },
+            { label: "voice", value: "voice" },
+            { label: "settings", value: "settings" },
+            { label: "error", value: "error" },
+            { label: "chat", value: "chat" },
+            { label: "add", value: "add" },
+            { label: "add-circle", value: "add-circle" },
+            { label: "address", value: "address" },
+            { label: "address-book", value: "address-book" },
+            { label: "agents", value: "agents" },
+            { label: "analytics", value: "analytics" },
+            { label: "available", value: "available" },
+            { label: "available-filled", value: "available-filled" },
+            { label: "away", value: "away" },
+            { label: "away-filled", value: "away-filled" },
+            { label: "bot", value: "bot" },
           ]}
         />
       </div>

@@ -8,6 +8,8 @@ import { NeoNavBar, NeoNavLeftButton, NeoNavLeft, NeoCheckbox } from "./neo";
 
 import ButtonSandBox from "./wrapper/ButtonSandBox";
 import TooltipSandBox from "./wrapper/TooltipSandBox";
+import IconSandBox from "./wrapper/IconSandBox";
+
 import Home from "./pages/Home";
 
 import logo from "./assets/avaya-logo-header.svg";
@@ -51,6 +53,9 @@ const App = () => {
             </Route>
             <Route exact path="/buttons">
               <ButtonSandBox />
+            </Route>
+            <Route exact path="/icons">
+              <IconSandBox />
             </Route>
           </Switch>
         </div>
