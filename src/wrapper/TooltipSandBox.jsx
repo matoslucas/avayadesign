@@ -16,7 +16,7 @@ const TooltipSandBox = () => {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est."
   );
 
-  const [isMultiline, setMultiline] = useState(false);
+ 
 
   const clickHandler = () => {
     console.log("clickHandler");
@@ -35,7 +35,7 @@ const TooltipSandBox = () => {
               <NeoTooltip
                 position={position}
                 text={tooltipText}
-                multiline={isMultiline}
+               
               >
                 <NeoButton
                   status="default"
@@ -52,8 +52,7 @@ const TooltipSandBox = () => {
       </div>
 
       <div className={"settings-panel"}>
-        <NeoCheckbox label={"Is Multiline"} onChange={setMultiline} />
-        <NeoTextarea
+       <NeoTextarea
           onChange={setTooltipText}
           defaultValue={tooltipText}
           rows="4"

@@ -1,7 +1,9 @@
-const NeoTooltip = ({ position = "right", children, text, multiline }) => {
+const NeoTooltip = ({ position = "right", children, text }) => {
   let classArray = ["neo-tooltip__content"];
 
-  if (multiline) {
+  
+
+  if (text && text.length >=50) {
     classArray.push("neo-tooltip__content--multiline");
   }
 

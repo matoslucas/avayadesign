@@ -22,7 +22,7 @@ const IconSnadBox = () => {
       </div>
 
       <div className={"settings-panel"}>
-      <NeoTextarea
+        <NeoTextarea
           label={"Aria Label"}
           onChange={setText}
           defaultValue={text}
