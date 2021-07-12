@@ -8,6 +8,7 @@ import {
   NeoRadioGroup,
   NeoSelectBox,
   NeoTextarea,
+  NeoTextinput,
 } from "../neo";
 
 const ButtonSandBox = () => {
@@ -20,17 +21,27 @@ const ButtonSandBox = () => {
 
   const [buttonShape, setButtonShape] = useState("default");
   const [buttonText, setButtonText] = useState("Text");
+  const [buttonBadge, setButtonBadge] = useState("");
   const [buttonStatus, setButtonStatus] = useState("default");
   const [buttonType, setButtonType] = useState("primary");
   const [buttonSize, setButtonSize] = useState("default");
+  const [buttonDir, setButtonDir] = useState(false);
 
   const clickHandler = () => {
     console.log("clickHandler");
   };
 
+  const keyDownHandler = (e) => {
+    //space pressed
+    if (e.keyCode === 32) {
+      //space
+      e.preventDefault();
+    }
+  };
+
   const updateShapeHandler = (value) => {
     setButtonShape(value);
-   
+
     if (value === "circle" && (!icon || icon === "false")) {
       setIcon("add");
     }
@@ -60,6 +71,8 @@ const ButtonSandBox = () => {
               shape={buttonShape}
               icon={icon}
               spinner={isSpinner}
+              badge={buttonBadge}
+              dir={buttonDir ? "rtl" : "ltr"}
             >
               {buttonText}
             </NeoButton>
@@ -71,10 +84,19 @@ const ButtonSandBox = () => {
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
         <NeoCheckbox label={"Pulse"} onChange={setPulse} />
         <NeoCheckbox label={"Spinner"} onChange={setSpinner} />
+        <NeoCheckbox label={"Dir"} onChange={setButtonDir} />
         <NeoTextarea
           label={"Content"}
           onChange={setButtonText}
           defaultValue={buttonText}
+        />
+        <NeoTextinput
+          label={"Badge"}
+          onChange={(e) => setButtonBadge(e.target.value)}
+          onClear={(e) => setButtonBadge("")}
+          onKeyDown={keyDownHandler}
+          defaultValue={buttonBadge}
+          maxLength={12}
         />
         <NeoRadioGroup
           onChange={setButtonSize}

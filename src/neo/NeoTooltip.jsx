@@ -1,9 +1,16 @@
-const NeoTooltip = ({ position = "right", children, text }) => {
+const NeoTooltip = ({
+  position = "right",
+  children,
+  text,
+  multiLineBreakpoint = 50,
+}) => {
   let classArray = ["neo-tooltip__content"];
 
-  
+  if (multiLineBreakpoint < 50) {
+    multiLineBreakpoint = 50;
+  }
 
-  if (text && text.length >=50) {
+  if (text && text.length >= multiLineBreakpoint) {
     classArray.push("neo-tooltip__content--multiline");
   }
 
@@ -14,7 +21,7 @@ const NeoTooltip = ({ position = "right", children, text }) => {
       {children}
       <div className={classArray.join(" ")}>
         <div className="neo-arrow"></div>
-        {text}
+        <div dangerouslySetInnerHTML={{ __html: text }} />
       </div>
     </div>
   );

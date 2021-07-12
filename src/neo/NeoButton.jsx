@@ -9,6 +9,8 @@ const NeoButton = ({
   onClick,
   children,
   spinner,
+  badge,
+  dir,
 }) => {
   let classArray = ["neo-btn"];
   let toRet;
@@ -67,6 +69,11 @@ const NeoButton = ({
     classArray.push(`neo-icon-${icon}`);
   }
 
+  if (badge) {
+    classArray.push(`neo-badge`);
+  }
+
+
   switch (shape) {
     case "circle":
     case "square":
@@ -78,6 +85,7 @@ const NeoButton = ({
         <button
           className={classArray.join(" ")}
           aria-label={ariaLabel}
+          data-badge={badge}
           onClick={onClick}
           disabled={disabled}
         />
@@ -89,6 +97,8 @@ const NeoButton = ({
           className={classArray.join(" ")}
           onClick={onClick}
           disabled={disabled}
+          data-badge={badge}
+          dir={dir}
         >
           {spinner ? <span className="neo-spinner"></span> : null}
           <div dangerouslySetInnerHTML={{__html: children}} />
