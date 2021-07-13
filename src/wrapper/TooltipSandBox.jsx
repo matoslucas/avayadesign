@@ -4,7 +4,7 @@ import "./wraper.css";
 
 import {
   NeoButton,
-  NeoCheckbox,
+  // NeoCheckbox,
   NeoRadioGroup,
   NeoTextarea,
   NeoTooltip,

@@ -9,6 +9,7 @@ import {
   NeoSelectBox,
   NeoTextarea,
   NeoTextinput,
+  NeoTable,
 } from "../neo";
 
 const ButtonSandBox = () => {
@@ -54,7 +55,46 @@ const ButtonSandBox = () => {
       setIcon(false);
     }
   };
+  // table data
+  const dataSource = [
+    {
+      key: "1",
+      property: "onClick",
+      description: "Set the handler to handle <code>click</code> event.",
+      type: "(event) => void",
+      default: "-",
+    },
+    {
+      key: "2",
+      property: "shape",
+      description: "Can be set button shape",
+      type: "circle | square",
+      default: "-",
+    },
+  ];
 
+  const columns = [
+    {
+      title: "Property",
+      dataIndex: "property",
+      key: "property",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
+    },
+    {
+      title: "Type",
+      dataIndex: "type",
+      key: "type",
+    },
+    {
+      title: "Default",
+      dataIndex: "default",
+      key: "default",
+    },
+  ];
   return (
     <div className="main">
       <div className={"sandbox"}>
@@ -77,7 +117,10 @@ const ButtonSandBox = () => {
               {buttonText}
             </NeoButton>
           </div>
+         
         </div>
+        <h4>API</h4>
+          <NeoTable dataSource={dataSource} columns={columns} />
       </div>
 
       <div className={"settings-panel"}>

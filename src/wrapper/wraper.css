@@ -1,3 +1,18 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace !important;
+  margin: 0 1px;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+  background: transparent;
+  border: 1px solid #303030;
+  border-radius: 3px;
+}
+.sandbox table td:nth-child(3) {
+  width: 22%;
+  color: #e0529c;
+  font-size: 13px;
+}
 .main {
   display: flex;
   width: 100%;
@@ -16,6 +31,9 @@
   padding: 1rem;
 }
 .sandbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 1rem;
   border: 1px dashed #979696;
   border-right: none;
