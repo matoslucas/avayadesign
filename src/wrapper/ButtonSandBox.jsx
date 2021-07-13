@@ -11,7 +11,7 @@ import {
   NeoTextinput,
   NeoTable,
 } from "../neo";
-// عندما يريد العالم
+
 const ButtonSandBox = () => {
   const [isDisable, setDisable] = useState(false);
 
@@ -65,7 +65,8 @@ const ButtonSandBox = () => {
     {
       key: "2",
       property: "shape",
-      description: "Set button shape, The icon will be required when using this property.",
+      description:
+        "Set button shape, The icon will be required when using this property.",
       type: "circle | square",
       default: "-",
     },
@@ -121,19 +122,34 @@ const ButtonSandBox = () => {
               {buttonText}
             </NeoButton>
           </div>
-         
         </div>
         <h4>API</h4>
-          <NeoTable dataSource={dataSource} columns={columns} />
+        <NeoTable dataSource={dataSource} columns={columns} />
       </div>
 
       <div className={"settings-panel"}>
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
-
-        <NeoCheckbox label={"Dir"} onChange={setButtonDir} />
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <NeoCheckbox
+            label={"Dir"}
+            onChange={setButtonDir}
+            onClick={() => {
+              setButtonText("عندما يريد العالم");
+              setIcon("settings");
+            }}
+          />
+          {buttonDir ? <code>rtl</code> : <code>ltr</code>}
+        </div>
         <NeoTextarea
           label={"Content"}
-          onChange={setButtonText}
+          onChange={(e) => setButtonText(e.target.value)}
           defaultValue={buttonText}
         />
         <NeoTextinput
@@ -144,7 +160,7 @@ const ButtonSandBox = () => {
           defaultValue={buttonBadge}
           maxLength={12}
         />
-         <NeoRadioGroup
+        <NeoRadioGroup
           onChange={setButtonAnimation}
           label={"Animation"}
           options={[

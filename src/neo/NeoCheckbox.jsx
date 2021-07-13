@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuid_v4 } from "uuid";
 
-const NeoCheckBox = ({ label, onChange }) => {
+const NeoCheckBox = ({ label, onChange, onClick }) => {
   const [isChecked, setIsChacked] = useState(false);
   const internalId = uuid_v4();
   const changeHandler = () => {
@@ -9,7 +9,7 @@ const NeoCheckBox = ({ label, onChange }) => {
     onChange(!isChecked);
   };
   return (
-    <div className="neo-form-control">
+    <div className="neo-form-control" onClick={onClick}>
       <label className="neo-switch" htmlFor={internalId}>
         <input
           id={internalId}
