@@ -54,28 +54,78 @@ const ButtonSandBox = () => {
     }
   };
   // table data
+
   const dataSource = [
     {
       key: "1",
+      property: "animation",
+      description: "Set animation for button, only accept 2 types",
+      type: "pulse| spinner",
+      default: "-",
+    },
+    {
+      key: "2",
+      property: "badge",
+      description: "Set badge for button, 12 characters as max-length, no space.",
+      type: "string",
+      default: "-",
+    },
+    {
+      key: "3",
+      property: "dir",
+      description: "Set the button direction,<code>string</code> left to right or right to left.",
+      type: "ltr | rtl",
+      default: "-",
+    },
+    {
+      key: "4",
+      property: "disabled",
+      description: "Set button as disabled.",
+      type: "boolean",
+      default: "false",
+    },
+    {
+      key: "5",
+      property: "icon",
+      description: "Set the icon, sample: <code>settings</code> name of the icon, check the icon names for the copmplete list.",
+      type: "string",
+      default: "-",
+    },
+    {
+      key: "6",
       property: "onClick",
       description: "Set the handler to handle <code>click</code> event.",
       type: "(event) => void",
       default: "-",
     },
     {
-      key: "2",
+      key: "7",
       property: "shape",
       description:
-        "Set button shape, The icon will be required when using this property.",
+        "Set button shape, <code>string</code> icon prop will be required when using this property.",
       type: "circle | square",
       default: "-",
     },
     {
-      key: "3",
+      key: "8",
       property: "size",
-      description: "Set button size, only 2 types of size are allowed.",
+      description: "Set button size, <code>string</code> only 2 types of size are allowed.",
       type: "compact | wide",
       default: "-",
+    },
+    {
+      key: "9",
+      property: "status",
+      description: "Set the state style for the button state.<code>string</code>",
+      type: "default | success | alert | warning | info",
+      default: "default",
+    },
+    {
+      key: "10",
+      property: "type",
+      description: "Set the level style for the button. <code>string</code>",
+      type: "primary | secondary | tertiary",
+      default: "primary",
     },
   ];
 
@@ -104,7 +154,7 @@ const ButtonSandBox = () => {
   return (
     <div className="main">
       <div className={"sandbox"}>
-        <h4>Buttons Sandbox</h4>
+        <h4>Button Sandbox</h4>
         <div className={"buttons-container"}>
           <div className={"button-box"}>
             <NeoButton
@@ -156,9 +206,9 @@ const ButtonSandBox = () => {
           label={"Badge"}
           onChange={(e) => setButtonBadge(e.target.value)}
           onClear={(e) => setButtonBadge("")}
-          onKeyDown={keyDownHandler}
+          
           defaultValue={buttonBadge}
-          maxLength={12}
+          
         />
         <NeoRadioGroup
           onChange={setButtonAnimation}

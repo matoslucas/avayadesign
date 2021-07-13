@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 
 const NeoButton = ({
-  shape,
-  size,
-  type,
-  disabled,
-  icon,
-  status,
-  onClick,
-  children,
   animation,
   badge,
+  children,
   dir,
+  disabled,
+  icon,
+  onClick,
+  shape,
+  size,
+  status,
+  type,
 }) => {
   const [spinner, setSpinner] = useState(false);
-
+ 
   let classArray = ["neo-btn"];
   let toRet;
 
@@ -84,6 +84,14 @@ const NeoButton = ({
     classArray.push("neo-pulse");
   }
 
+  const renderBadge = (txt) => {
+    let toRet = txt.replace(/\s/g, "");
+    if (toRet.length >= 12) {
+      toRet = toRet.substring(0, 12);
+    }
+    return toRet;
+  };
+
   switch (shape) {
     case "circle":
     case "square":
@@ -95,7 +103,7 @@ const NeoButton = ({
         <button
           className={classArray.join(" ")}
           aria-label={ariaLabel}
-          data-badge={badge}
+          data-badge={renderBadge(badge)}
           onClick={onClick}
           disabled={disabled}
         />
@@ -107,7 +115,7 @@ const NeoButton = ({
           className={classArray.join(" ")}
           onClick={onClick}
           disabled={disabled}
-          data-badge={badge}
+          data-badge={renderBadge(badge)}
           dir={dir}
         >
           {spinner ? <span className="neo-spinner"></span> : null}
