@@ -15,7 +15,7 @@ import Home from "./pages/Home";
 import logo from "./assets/avaya-logo-header.svg";
 
 const App = () => {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   const [isDarktheme, setDarkTheme] = useState(false);
   return (
     <Router>
@@ -27,7 +27,7 @@ const App = () => {
             : "neo-light neo-global-colors"
         }
       >
-        <NeoNavBar>
+        <NeoNavBar style={{ position: "fixed", width: "100%" }}>
           <NeoNavLeftButton>
             <div className="neo-badge__navbutton">
               <button

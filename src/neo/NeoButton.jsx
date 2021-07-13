@@ -1,21 +1,32 @@
+import { useState, useEffect } from "react";
+
 const NeoButton = ({
   shape,
   size,
-  pulse,
   type,
   disabled,
   icon,
   status,
   onClick,
   children,
-  spinner,
+  animation,
   badge,
   dir,
 }) => {
+  const [spinner, setSpinner] = useState(false);
+
   let classArray = ["neo-btn"];
   let toRet;
 
   let ariaLabel = "";
+
+  useEffect(() => {
+    if (animation === "spinner") {
+      setSpinner(true);
+    } else {
+      setSpinner(false);
+    }
+  }, [animation]);
 
   switch (type) {
     case "primary":
@@ -61,10 +72,6 @@ const NeoButton = ({
     default:
   }
 
-  if (pulse) {
-    classArray.push("neo-pulse");
-  }
-
   if (icon) {
     classArray.push(`neo-icon-${icon}`);
   }
@@ -73,12 +80,15 @@ const NeoButton = ({
     classArray.push(`neo-badge`);
   }
 
+  if (animation === "pulse") {
+    classArray.push("neo-pulse");
+  }
 
   switch (shape) {
     case "circle":
     case "square":
       // display warning
-      if (!icon || icon==="false") {
+      if (!icon || icon === "false") {
         console.warn("An icon is required");
       }
       toRet = (
@@ -101,7 +111,7 @@ const NeoButton = ({
           dir={dir}
         >
           {spinner ? <span className="neo-spinner"></span> : null}
-          <div dangerouslySetInnerHTML={{__html: children}} />
+          <div dangerouslySetInnerHTML={{ __html: children }} />
         </button>
       );
   }

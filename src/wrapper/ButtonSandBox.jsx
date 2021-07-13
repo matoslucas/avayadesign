@@ -11,12 +11,9 @@ import {
   NeoTextinput,
   NeoTable,
 } from "../neo";
-
+// عندما يريد العالم
 const ButtonSandBox = () => {
   const [isDisable, setDisable] = useState(false);
-  const [isPulse, setPulse] = useState(false);
-
-  const [isSpinner, setSpinner] = useState(false);
 
   const [icon, setIcon] = useState(false);
 
@@ -27,6 +24,7 @@ const ButtonSandBox = () => {
   const [buttonType, setButtonType] = useState("primary");
   const [buttonSize, setButtonSize] = useState("default");
   const [buttonDir, setButtonDir] = useState(false);
+  const [buttonAnimation, setButtonAnimation] = useState("default");
 
   const clickHandler = () => {
     console.log("clickHandler");
@@ -67,8 +65,15 @@ const ButtonSandBox = () => {
     {
       key: "2",
       property: "shape",
-      description: "Can be set button shape",
+      description: "Set button shape, The icon will be required when using this property.",
       type: "circle | square",
+      default: "-",
+    },
+    {
+      key: "3",
+      property: "size",
+      description: "Set button size, only 2 types of size are allowed.",
+      type: "compact | wide",
       default: "-",
     },
   ];
@@ -106,11 +111,10 @@ const ButtonSandBox = () => {
               onClick={clickHandler}
               type={buttonType}
               disabled={isDisable}
-              pulse={isPulse}
               size={buttonSize}
               shape={buttonShape}
               icon={icon}
-              spinner={isSpinner}
+              animation={buttonAnimation}
               badge={buttonBadge}
               dir={buttonDir ? "rtl" : "ltr"}
             >
@@ -125,8 +129,7 @@ const ButtonSandBox = () => {
 
       <div className={"settings-panel"}>
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
-        <NeoCheckbox label={"Pulse"} onChange={setPulse} />
-        <NeoCheckbox label={"Spinner"} onChange={setSpinner} />
+
         <NeoCheckbox label={"Dir"} onChange={setButtonDir} />
         <NeoTextarea
           label={"Content"}
@@ -141,6 +144,16 @@ const ButtonSandBox = () => {
           defaultValue={buttonBadge}
           maxLength={12}
         />
+         <NeoRadioGroup
+          onChange={setButtonAnimation}
+          label={"Animation"}
+          options={[
+            { name: "Default", value: "default" },
+            { name: "Spinner", value: "spinner" },
+            { name: "Pulse", value: "pulse" },
+          ]}
+        />
+        <br />
         <NeoRadioGroup
           onChange={setButtonSize}
           label={"Size"}

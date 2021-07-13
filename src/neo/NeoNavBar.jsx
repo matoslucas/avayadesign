@@ -1,4 +1,4 @@
-const NeoNavBar = ({ children }) => {
-  return <nav className="neo-navbar">{children ? children : null}</nav>;
+const NeoNavBar = ({ children, style }) => {
+  return <nav className="neo-navbar" style={style}>{children ? children : null}</nav>;
 };
 export default NeoNavBar;

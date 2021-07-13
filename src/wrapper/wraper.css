@@ -9,15 +9,18 @@ code {
   border-radius: 3px;
 }
 .sandbox table td:nth-child(3) {
-  width: 22%;
-  color: #e0529c;
-  font-size: 13px;
+  color: #c41d7f;
 }
+.sandbox table td div {
+  font-size: 0.8rem;
+  font-family: Roboto Mono, monospace;
+}
+
 .main {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
 .main h4 {
   text-align: center;
