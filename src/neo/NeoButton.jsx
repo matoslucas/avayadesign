@@ -14,7 +14,7 @@ const NeoButton = ({
   type,
 }) => {
   const [spinner, setSpinner] = useState(false);
- 
+
   let classArray = ["neo-btn"];
   let toRet;
 
@@ -85,6 +85,9 @@ const NeoButton = ({
   }
 
   const renderBadge = (txt) => {
+    if (!txt) {
+      return "";
+    }
     let toRet = txt.replace(/\s/g, "");
     if (toRet.length >= 12) {
       toRet = toRet.substring(0, 12);
