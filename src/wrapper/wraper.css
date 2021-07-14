@@ -4,7 +4,7 @@ code {
   margin: 0;
   padding: 4px 8px;
   font-size: 0.9em;
-  background-color: #f1f1f1;
+  background-color: rgba(241, 241, 241, 0.25);
   border: 1px solid #939393;
   border-radius: 4px;
 
