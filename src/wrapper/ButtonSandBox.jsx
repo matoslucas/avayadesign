@@ -59,72 +59,84 @@ const ButtonSandBox = () => {
     {
       key: "1",
       property: "animation",
+      type: "string",
       description: "Set animation for button, only accept 2 types",
-      type: "pulse| spinner",
+      values: "pulse| spinner",
       default: "-",
     },
     {
       key: "2",
       property: "badge",
-      description: "Set badge for button, 12 characters as max-length, no space.",
       type: "string",
+      description:
+        "Set badge for button, 12 characters as max-length, no space.",
+      values: "string",
       default: "-",
     },
     {
       key: "3",
       property: "dir",
-      description: "Set the button direction,<code>string</code> left to right or right to left.",
-      type: "ltr | rtl",
+      type: "string",
+      description: "Set the button direction, left to right or right to left.",
+      values: "ltr | rtl",
       default: "-",
     },
     {
       key: "4",
       property: "disabled",
-      description: "Set button as disabled.",
       type: "boolean",
+      description: "Set button as disabled.",
+      values: "true | false",
       default: "false",
     },
     {
       key: "5",
       property: "icon",
-      description: "Set the icon, sample: <code>settings</code> name of the icon, check the icon names for the copmplete list.",
       type: "string",
+      description: "Set the icon, use the name of the icon",
+      values:
+        "check the <a href='https://design.avaya.com/components/icons/'>icon names</a> for the copmplete list.",
       default: "-",
     },
     {
       key: "6",
       property: "onClick",
-      description: "Set the handler to handle <code>click</code> event.",
-      type: "(event) => void",
+      type: "function",
+      description: "Set the handler to handle click event.",
+      values: "(event) => void",
       default: "-",
     },
     {
       key: "7",
       property: "shape",
+      type: "string",
       description:
-        "Set button shape, <code>string</code> icon prop will be required when using this property.",
-      type: "circle | square",
+        "Set button shape, icon prop will be required when using this property.",
+      values: "circle | square",
       default: "-",
     },
     {
       key: "8",
       property: "size",
-      description: "Set button size, <code>string</code> only 2 types of size are allowed.",
-      type: "compact | wide",
+      type: "string",
+      description: "Set button size, only 2 types of size are allowed.",
+      values: "compact | wide",
       default: "-",
     },
     {
       key: "9",
       property: "status",
-      description: "Set the state style for the button state.<code>string</code>",
-      type: "default | success | alert | warning | info",
+      type: "string",
+      description: "Set the state style for the button state.",
+      values: "default | success | alert | warning | info",
       default: "default",
     },
     {
       key: "10",
       property: "type",
-      description: "Set the level style for the button. <code>string</code>",
-      type: "primary | secondary | tertiary",
+      type: "string",
+      description: "Set the level style for the button.",
+      values: "primary | secondary | tertiary",
       default: "primary",
     },
   ];
@@ -133,7 +145,14 @@ const ButtonSandBox = () => {
     {
       title: "Property",
       dataIndex: "property",
+      width:"166px",
       key: "property",
+      render: (text, record) => (
+        <div className={"api-prop-col"}>
+          {text}
+          <code>{record.type}</code>
+        </div>
+      ),
     },
     {
       title: "Description",
@@ -141,12 +160,13 @@ const ButtonSandBox = () => {
       key: "description",
     },
     {
-      title: "Type",
-      dataIndex: "type",
-      key: "type",
+      title: "Values",
+      dataIndex: "values",
+      width:"226px",
+      key: "values",
     },
     {
-      title: "Default",
+      title: "Default State",
       dataIndex: "default",
       key: "default",
     },
@@ -206,9 +226,7 @@ const ButtonSandBox = () => {
           label={"Badge"}
           onChange={(e) => setButtonBadge(e.target.value)}
           onClear={(e) => setButtonBadge("")}
-          
           defaultValue={buttonBadge}
-          
         />
         <NeoRadioGroup
           onChange={setButtonAnimation}
