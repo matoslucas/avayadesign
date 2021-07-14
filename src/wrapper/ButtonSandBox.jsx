@@ -18,8 +18,8 @@ const ButtonSandBox = () => {
   const [icon, setIcon] = useState(false);
 
   const [buttonShape, setButtonShape] = useState("default");
-  const [buttonText, setButtonText] = useState("Text");
-  const [buttonBadge, setButtonBadge] = useState("");
+  const [buttonText, setButtonText] = useState("Hello");
+  const [buttonBadge, setButtonBadge] = useState("100K");
   const [buttonStatus, setButtonStatus] = useState("default");
   const [buttonType, setButtonType] = useState("primary");
   const [buttonSize, setButtonSize] = useState("default");

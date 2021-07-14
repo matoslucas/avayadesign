@@ -9,10 +9,7 @@ const NeoTable = ({ dataSource, columns }) => {
     );
   };
 
-  columns.forEach((col, index) => {
-    console.log(col.dataIndex);
-  });
-
+ 
   const renderTableBody = (item) => {
     return (
       <tr key={item.key}>
