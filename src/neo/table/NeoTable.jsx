@@ -1,3 +1,5 @@
+import "./table.css";
+
 const NeoTable = ({ dataSource, columns }) => {
   const renderHeaders = (item, index) => {
     return item.width ? (

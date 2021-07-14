@@ -53,7 +53,7 @@ const TooltipSandBox = () => {
 
       <div className={"settings-panel"}>
        <NeoTextarea
-          onChange={setTooltipText}
+          onChange={(e)=>setTooltipText(e.target.value)}
           defaultValue={tooltipText}
           rows="4"
         />

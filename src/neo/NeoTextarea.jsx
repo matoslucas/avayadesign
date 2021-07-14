@@ -15,9 +15,6 @@ const NeoTextarea = ({
   const [value, updateValue] = useState(defaultValue);
   const [counter, updateCounter] = useState(defaultValue.length);
 
-  
-  
-
   useEffect(() => {
     updateValue(defaultValue);
     updateCounter(defaultValue.length);
