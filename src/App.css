@@ -5,6 +5,7 @@
   position: fixed;
   left: -100%;
   transition: 0.4s;
+  z-index: 50;
 }
 .active {
   left: 0;
