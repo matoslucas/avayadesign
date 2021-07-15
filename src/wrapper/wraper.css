@@ -48,7 +48,7 @@ code {
   border: 1px dashed #979696;
   padding: 1rem;
   flex-flow: row wrap;
-  margin: 0.4rem;
+  max-width: 1100px;
 }
 .sandbox {
   display: flex;
@@ -91,6 +91,7 @@ code {
 @media screen and (max-width: 575px) {
   .settings-panel {
     order: -1;
+    border-bottom: none;
   }
 }
 
@@ -100,6 +101,7 @@ code {
 @media screen and (min-width: 576px) {
   .settings-panel {
     order: -1;
+    border-bottom: none;
   }
 }
 
@@ -109,6 +111,7 @@ code {
 @media screen and (min-width: 768px) {
   .settings-panel {
     order: -1;
+    border-bottom: none;
   }
 }
 
@@ -118,6 +121,7 @@ code {
 @media screen and (min-width: 992px) {
   .settings-panel {
     order: -1;
+    border-bottom: none;
   }
 }
 
@@ -130,6 +134,7 @@ code {
   }
   .settings-panel {
     order: -1;
+    border-bottom: none;
   }
 }
 
