@@ -199,24 +199,16 @@ const ButtonSandBox = () => {
 
       <div className={"settings-panel"}>
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+       
           <NeoCheckbox
-            label={"Dir"}
+            label={buttonDir ? <>Dir<code>rtl</code></> :<> Dir<code>ltr</code></>}
             onChange={setButtonDir}
             onClick={() => {
               setButtonText("عندما يريد العالم");
               setIcon("settings");
             }}
           />
-          {buttonDir ? <code>rtl</code> : <code>ltr</code>}
-        </div>
+         
         <NeoTextarea
           label={"Content"}
           onChange={(e) => setButtonText(e.target.value)}

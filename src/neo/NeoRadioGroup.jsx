@@ -3,7 +3,7 @@ import { v4 as uuid_v4 } from "uuid";
 
 const NeoRadioGroup = ({ options, label, onChange, name = uuid_v4() }) => {
   return (
-    <>
+    <div className="neo-form-control">
       <h5>{label}</h5>
       <div className="neo-input-group">
         {options
@@ -26,7 +26,7 @@ const NeoRadioGroup = ({ options, label, onChange, name = uuid_v4() }) => {
             })
           : null}
       </div>
-    </>
+    </div>
   );
 };
 

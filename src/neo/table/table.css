@@ -1,3 +1,6 @@
+td label {
+  display: none;
+}
 /*
 	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
 	*/
@@ -10,7 +13,8 @@
   th,
   td,
   tr {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
@@ -25,7 +29,7 @@
   }
 
   tr:nth-child(odd) {
-    background: #ccc;
+    background: #f4f4f4;
   }
 
   td {
@@ -34,6 +38,15 @@
     border-bottom: 1px solid #eee;
     position: relative;
     padding-left: 50%;
+  }
+
+  td label {
+    font-weight: bold;
+    display: block;
+  }
+
+  td label::after {
+    content: ":";
   }
 
   td:before {

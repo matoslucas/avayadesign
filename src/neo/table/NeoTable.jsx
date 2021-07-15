@@ -11,17 +11,18 @@ const NeoTable = ({ dataSource, columns }) => {
     );
   };
 
- 
   const renderTableBody = (item) => {
     return (
       <tr key={item.key}>
         {columns.map((col) => {
           return col.render ? (
             <td key={col.key + item.key}>
+              <label>{col.title}</label>
               {col.render(item[col.dataIndex], item)}
             </td>
           ) : (
             <td key={col.key + item.key}>
+              <label>{col.title}</label>
               <div dangerouslySetInnerHTML={{ __html: item[col.dataIndex] }} />
             </td>
           );
