@@ -1,9 +1,9 @@
 const NeoTooltip = ({
-  position = "right",
-  children,
-  text,
-  multiLineBreakpoint = 50,
   id,
+  multiLineBreakpoint = 50,
+  position = "up",
+  text,
+  children,
 }) => {
   let classArray = ["neo-tooltip__content"];
 

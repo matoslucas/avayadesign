@@ -182,7 +182,7 @@ const ButtonSandBox = () => {
       key: "values",
     },
     {
-      title: "Default State",
+      title: "Default",
       dataIndex: "default",
       key: "default",
     },

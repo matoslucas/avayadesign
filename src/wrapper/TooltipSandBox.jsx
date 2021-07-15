@@ -11,6 +11,7 @@ import {
   NeoRadioGroup,
   NeoTextarea,
   NeoTooltip,
+  NeoTable,
 } from "../neo";
 
 const TooltipSandBox = () => {
@@ -22,6 +23,73 @@ const TooltipSandBox = () => {
   const clickHandler = () => {
     console.log("clickHandler");
   };
+
+  
+  const dataSource = [
+    {
+      key: "1",
+      property: "id",
+      type: "string | number",
+      description: "Set id to handle aria screen reader",
+      values: "text/id",
+      default: "-",
+    },
+    {
+      key: "2",
+      property: "multiLineBreakpoint",
+      type: "number",
+      description: "Change multiline break point, it is restricted to 50",
+      values: "50",
+      default: "-",
+    },
+    {
+      key: "3",
+      property: "position",
+      type: "string",
+      description: "Set alignment position of the tooltip",
+      values: "right | left | up | up-right | up-left | down | down-right | down-left",
+      default: "up",
+    },
+    {
+      key: "4",
+      property: "text",
+      type: "string",
+      description: "Set text for the tooltip",
+      values: "text",
+      default: "-",
+    },
+  ];
+
+  const columns = [
+    {
+      title: "Property",
+      dataIndex: "property",
+      width: "236px",
+      key: "property",
+      render: (text, record) => (
+        <div className={"api-prop-col"}>
+          {text}
+          <code>{record.type}</code>
+        </div>
+      ),
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
+    },
+    {
+      title: "Values",
+      dataIndex: "values",
+      width: "226px",
+      key: "values",
+    },
+    {
+      title: "Default",
+      dataIndex: "default",
+      key: "default",
+    },
+  ];
 
   return (
     <div className="main">
@@ -74,6 +142,8 @@ const TooltipSandBox = () => {
             </div>
           </form>
         </div>
+        <h4>API</h4>
+        <NeoTable dataSource={dataSource} columns={columns} />
       </div>
 
       <div className={"settings-panel"}>
