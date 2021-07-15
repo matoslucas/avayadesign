@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 const NeoButton = ({
   animation,
+  ariaLabel,
+  ariaLabelledBy,
   badge,
   children,
   dir,
@@ -15,10 +17,10 @@ const NeoButton = ({
 }) => {
   const [spinner, setSpinner] = useState(false);
 
+ 
+
   let classArray = ["neo-btn"];
   let toRet;
-
-  let ariaLabel = "";
 
   useEffect(() => {
     if (animation === "spinner") {
@@ -109,6 +111,7 @@ const NeoButton = ({
           data-badge={renderBadge(badge)}
           onClick={onClick}
           disabled={disabled}
+          dir={dir}
         />
       );
       break;
@@ -116,9 +119,10 @@ const NeoButton = ({
       toRet = (
         <button
           className={classArray.join(" ")}
+          aria-labelledby={ariaLabelledBy}
+          data-badge={renderBadge(badge)}
           onClick={onClick}
           disabled={disabled}
-          data-badge={renderBadge(badge)}
           dir={dir}
         >
           {spinner ? <span className="neo-spinner"></span> : null}

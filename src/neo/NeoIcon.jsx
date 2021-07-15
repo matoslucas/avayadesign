@@ -1,4 +1,4 @@
-const Neoicon = ({ status, icon, large, ariaLabel ="icon" }) => {
+const Neoicon = ({ status, icon, large, alt ="icon" }) => {
   let classArray = ["neo-icon-state"];
 
   if (status){
@@ -15,7 +15,7 @@ const Neoicon = ({ status, icon, large, ariaLabel ="icon" }) => {
   return (
     <span
       class={classArray.join(" ")}
-      aria-label={ariaLabel}
+      aria-label={alt}
     ></span>
   );
 };

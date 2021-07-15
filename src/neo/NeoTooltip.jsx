@@ -3,6 +3,7 @@ const NeoTooltip = ({
   children,
   text,
   multiLineBreakpoint = 50,
+  id,
 }) => {
   let classArray = ["neo-tooltip__content"];
 
@@ -19,7 +20,7 @@ const NeoTooltip = ({
       className={`neo-tooltip neo-tooltip--${position} neo-tooltip--onhover`}
     >
       {children}
-      <div className={classArray.join(" ")}>
+      <div className={classArray.join(" ")} id={id}>
         <div className="neo-arrow"></div>
         <div dangerouslySetInnerHTML={{ __html: text }} />
       </div>

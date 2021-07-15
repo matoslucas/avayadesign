@@ -10,6 +10,7 @@ import NeoTextarea from "./NeoTextarea";
 import NeoTextinput from "./NeoTextinput";
 import NeoIcon from "./NeoIcon";
 import NeoTable from "./table/NeoTable";
+import NeoImage from "./NeoImage";
 
 export {
   NeoButton,
@@ -24,4 +25,5 @@ export {
   NeoTooltip,
   NeoIcon,
   NeoTable,
+  NeoImage,
 };

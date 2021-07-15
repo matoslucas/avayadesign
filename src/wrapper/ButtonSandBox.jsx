@@ -65,11 +65,26 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
+      key: "11",
+      property: "ariaLabel",
+      type: "string",
+      description: "Set the screen reader text",
+      values: "text",
+      default: "-",
+    },
+    {
+      key: "12",
+      property: "ariaLabelledBy",
+      type: "string",
+      description: "Set the id for the screen reader text",
+      values: "text",
+      default: "-",
+    },
+    {
       key: "2",
       property: "badge",
       type: "string",
-      description:
-        "Display badge on top corner of button, up to 12 characters",
+      description: "Display badge on top corner of button, up to 12 characters",
       values: "string",
       default: "-",
     },
@@ -77,7 +92,8 @@ const ButtonSandBox = () => {
       key: "3",
       property: "dir",
       type: "string",
-      description: "Set the button appearance for left-to-right or right-to-left languages",
+      description:
+        "Set the button appearance for left-to-right or right-to-left languages",
       values: "ltr | rtl",
       default: "-",
     },
@@ -110,8 +126,7 @@ const ButtonSandBox = () => {
       key: "7",
       property: "shape",
       type: "string",
-      description:
-        "Shape of the button when using only icons",
+      description: "Shape of the button when using only icons",
       values: "circle | square",
       default: "-",
     },
@@ -119,7 +134,8 @@ const ButtonSandBox = () => {
       key: "8",
       property: "size",
       type: "string",
-      description: "Size of the button to manually set the width or make it small",
+      description:
+        "Size of the button to manually set the width or make it small",
       values: "compact | wide",
       default: "-",
     },
@@ -145,7 +161,7 @@ const ButtonSandBox = () => {
     {
       title: "Property",
       dataIndex: "property",
-      width:"166px",
+      width: "200px",
       key: "property",
       render: (text, record) => (
         <div className={"api-prop-col"}>
@@ -162,7 +178,7 @@ const ButtonSandBox = () => {
     {
       title: "Values",
       dataIndex: "values",
-      width:"226px",
+      width: "226px",
       key: "values",
     },
     {
@@ -199,16 +215,27 @@ const ButtonSandBox = () => {
 
       <div className={"settings-panel"}>
         <NeoCheckbox label={"Disable"} onChange={setDisable} />
-       
-          <NeoCheckbox
-            label={buttonDir ? <>Dir<code>rtl</code></> :<> Dir<code>ltr</code></>}
-            onChange={setButtonDir}
-            onClick={() => {
-              setButtonText("عندما يريد العالم");
-              setIcon("settings");
-            }}
-          />
-         
+
+        <NeoCheckbox
+          label={
+            buttonDir ? (
+              <>
+                Dir<code>rtl</code>
+              </>
+            ) : (
+              <>
+                {" "}
+                Dir<code>ltr</code>
+              </>
+            )
+          }
+          onChange={setButtonDir}
+          onClick={() => {
+            setButtonText("عندما يريد العالم");
+            setIcon("settings");
+          }}
+        />
+
         <NeoTextarea
           label={"Content"}
           onChange={(e) => setButtonText(e.target.value)}

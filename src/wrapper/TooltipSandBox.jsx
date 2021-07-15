@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { v4 as uuid_v4 } from "uuid";
+
 import "@avaya/neo/neo/dist/css/neo/neo.min.css";
 import "./wraper.css";
 
 import {
   NeoButton,
-  // NeoCheckbox,
+  NeoImage,
+  NeoIcon,
   NeoRadioGroup,
   NeoTextarea,
   NeoTooltip,
@@ -15,8 +18,6 @@ const TooltipSandBox = () => {
   const [tooltipText, setTooltipText] = useState(
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est."
   );
-
- 
 
   const clickHandler = () => {
     console.log("clickHandler");
@@ -29,22 +30,46 @@ const TooltipSandBox = () => {
         <div className={"buttons-container"}>
           <form
             className={"neo-form"}
-            style={{ width: "100%", height: "15rem" }}
+            style={{ width: "100%", flexFlow: "row wrap", display: "flex" }}
           >
             <div className={"tooltip-box"}>
-              <NeoTooltip
-                position={position}
-                text={tooltipText}
-               
-              >
+              <NeoTooltip position={position} text={tooltipText}>
+                <NeoImage
+                  src="https://i.picsum.photos/id/1022/200/200.jpg?hmac=MjK2sur6luq2UfxMPWBFBuPyvZYyYLYvQH9kCmEGJRY"
+                  alt={"sample image tooltip"}
+                />
+              </NeoTooltip>
+            </div>
+            <div className={"tooltip-box"}>
+              <NeoTooltip position={position} text={tooltipText} >
                 <NeoButton
                   status="default"
-                  text={"default"}
                   onClick={clickHandler}
                   type={"primary"}
                 >
-                  Tooltip
+                  Button
                 </NeoButton>
+              </NeoTooltip>
+            </div>
+            <div className={"tooltip-box"}>
+              <NeoTooltip position={position} text={tooltipText}>
+                <NeoIcon
+                  status="default"
+                  icon="help"
+                  large={false}
+                  alt={"icon sample"}
+                  onClick={clickHandler}
+                />
+              </NeoTooltip>
+            </div>
+            <div className={"tooltip-box"}>
+              <NeoTooltip position={position} text={tooltipText}>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
               </NeoTooltip>
             </div>
           </form>
@@ -52,8 +77,8 @@ const TooltipSandBox = () => {
       </div>
 
       <div className={"settings-panel"}>
-       <NeoTextarea
-          onChange={(e)=>setTooltipText(e.target.value)}
+        <NeoTextarea
+          onChange={(e) => setTooltipText(e.target.value)}
           defaultValue={tooltipText}
           rows="4"
         />
