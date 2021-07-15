@@ -16,8 +16,9 @@ code {
   justify-content: space-between;
 }
 .sandbox table td div {
-  font-size: 0.8rem;
-  font-family: Roboto Mono, monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .main {
@@ -48,7 +49,7 @@ code {
   border: 1px dashed #979696;
   padding: 1rem;
   flex-flow: row wrap;
-  max-width: 1100px;
+  max-width: 1090px;
 }
 .sandbox {
   display: flex;
@@ -57,7 +58,7 @@ code {
   padding: 0;
   border: 1px dashed #979696;
   flex: 1 1 100%;
-  max-width: 1100px;
+  max-width: 1090px;
 }
 
 .buttons-container {
@@ -129,9 +130,6 @@ code {
 *xl: '(min-width: 1200px)',
 */
 @media screen and (min-width: 1200px) {
-  .sandbox {
-    width: 99%;
-  }
   .settings-panel {
     order: -1;
     border-bottom: none;

@@ -27,7 +27,7 @@ const App = () => {
             : "neo-light neo-global-colors"
         }
       >
-        <NeoNavBar style={{ position: "fixed", width: "100%" }}>
+        <NeoNavBar style={{ position: "fixed", width: "100%", zIndex: 51 }}>
           <NeoNavLeftButton>
             <div className="neo-badge__navbutton">
               <button
