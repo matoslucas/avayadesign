@@ -157,6 +157,7 @@ xxl: '(min-width: 1600px)',
     margin-top: 0;
     margin-bottom: 0;
     border-left: none;
+    border-bottom: 1px dashed #979696;
     max-width: 250px;
   }
 }
