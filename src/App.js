@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Router>
       <div
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", minHeight: "100vh" }}
         className={
           isDarktheme
             ? "neo-dark neo-global-colors"

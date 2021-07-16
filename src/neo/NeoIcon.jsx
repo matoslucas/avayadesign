@@ -14,7 +14,7 @@ const Neoicon = ({ status, icon, large, alt ="icon" }) => {
 
   return (
     <span
-      class={classArray.join(" ")}
+      className={classArray.join(" ")}
       aria-label={alt}
     ></span>
   );
