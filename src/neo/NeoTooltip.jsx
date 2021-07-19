@@ -4,7 +4,10 @@ const NeoTooltip = ({
   text,
   children,
 }) => {
-  const { ariaLabelledBy } = children.props;
+  let { ariaLabelledBy } = children.props;
+  if (children.props["aria-labelledby"]) {
+    ariaLabelledBy = children.props["aria-labelledby"];
+  }
   let classArray = ["neo-tooltip__content"];
 
   if (multiLineBreakpoint < 50) {
@@ -14,8 +17,6 @@ const NeoTooltip = ({
   if (text && text.length >= multiLineBreakpoint) {
     classArray.push("neo-tooltip__content--multiline");
   }
-
-
 
   return (
     <div

@@ -12,11 +12,10 @@ const NeoButton = ({
   onClick,
   shape,
   size,
-  status="default",
-  styleType="primary",
-  type="button",
+  status = "default",
+  styleType = "primary",
+  type = "button",
 }) => {
- 
   const [spinner, setSpinner] = useState(false);
 
   let classArray = ["neo-btn"];
@@ -103,6 +102,9 @@ const NeoButton = ({
       // display warning
       if (!icon || icon === "false") {
         console.warn("An icon is required");
+      }
+      if (!ariaLabel) {
+        console.error("Aria-label property is missing");
       }
       toRet = (
         <button
