@@ -1,4 +1,4 @@
-const NeoImage = ({ src, alt, ariaLabelledBy }) => {
+const NeoImage = ({ src, alt, ariaLabelledBy, tabIndex = 0 }) => {
   if (!src) {
     console.error("NeoImage src property is mandatory");
   }
@@ -7,6 +7,7 @@ const NeoImage = ({ src, alt, ariaLabelledBy }) => {
   }
   return (
     <img
+      tabIndex={tabIndex}
       src={src}
       className="neo-img neo-img--fluid"
       alt={alt}

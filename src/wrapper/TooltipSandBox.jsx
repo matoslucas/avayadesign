@@ -33,7 +33,7 @@ const TooltipSandBox = () => {
       type: "number",
       description: "Change multiline break point, it is restricted to 50",
       values: "50",
-      default: "-",
+      default: "50",
     },
     {
       key: "3",
@@ -95,7 +95,7 @@ const TooltipSandBox = () => {
             style={{ width: "100%", flexFlow: "row wrap", display: "flex" }}
           >
             <div className={"tooltip-box"}>
-              <NeoTooltip position={position} text={tooltipText}>
+              <NeoTooltip position={position} text={tooltipText} >
                 <NeoImage
                   src="https://i.picsum.photos/id/1022/200/200.jpg?hmac=MjK2sur6luq2UfxMPWBFBuPyvZYyYLYvQH9kCmEGJRY"
                   alt={"sample image tooltip"}
