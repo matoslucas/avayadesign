@@ -65,7 +65,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "11",
+      key: "2",
       property: "ariaLabel",
       type: "string",
       description: "Set the screen reader text",
@@ -73,7 +73,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "12",
+      key: "3",
       property: "ariaLabelledBy",
       type: "string",
       description: "Set the id for the screen reader text",
@@ -81,7 +81,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "2",
+      key: "4",
       property: "badge",
       type: "string",
       description: "Display badge on top corner of button, up to 12 characters",
@@ -89,7 +89,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "3",
+      key: "5",
       property: "dir",
       type: "string",
       description:
@@ -98,7 +98,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "4",
+      key: "6",
       property: "disabled",
       type: "boolean",
       description: "Set the button to disabled so it cannot be interacted with",
@@ -106,7 +106,7 @@ const ButtonSandBox = () => {
       default: "false",
     },
     {
-      key: "5",
+      key: "7",
       property: "icon",
       type: "string",
       description: "Icon displayed on the button",
@@ -115,7 +115,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "6",
+      key: "8",
       property: "onClick",
       type: "function",
       description: "Callback when the button is pressed",
@@ -123,7 +123,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "7",
+      key: "9",
       property: "shape",
       type: "string",
       description: "Shape of the button when using only icons",
@@ -131,7 +131,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "8",
+      key: "10",
       property: "size",
       type: "string",
       description:
@@ -140,7 +140,7 @@ const ButtonSandBox = () => {
       default: "-",
     },
     {
-      key: "9",
+      key: "11",
       property: "status",
       type: "string",
       description: "Color of the button",
@@ -148,12 +148,21 @@ const ButtonSandBox = () => {
       default: "default",
     },
     {
-      key: "10",
-      property: "type",
+      key: "12",
+      property: "styleType",
       type: "string",
       description: "Style of the button",
       values: "primary | secondary | tertiary",
       default: "primary",
+    },
+    {
+      key: "13",
+      property: "type",
+      type: "string",
+      description:
+        "Specifies the type of button, used in combination with <i>form HTML</i>",
+      values: "button | submit | reset",
+      default: "button",
     },
   ];
 
@@ -196,7 +205,7 @@ const ButtonSandBox = () => {
             <NeoButton
               status={buttonStatus}
               onClick={clickHandler}
-              type={buttonType}
+              styleType={buttonType}
               disabled={isDisable}
               size={buttonSize}
               shape={buttonShape}
@@ -224,7 +233,6 @@ const ButtonSandBox = () => {
               </>
             ) : (
               <>
-                {" "}
                 Dir<code>ltr</code>
               </>
             )

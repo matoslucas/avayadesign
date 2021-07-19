@@ -12,6 +12,7 @@ import {
   NeoTextarea,
   NeoTooltip,
   NeoTable,
+  NeoTextinput,
 } from "../neo";
 
 const TooltipSandBox = () => {
@@ -24,7 +25,6 @@ const TooltipSandBox = () => {
     console.log("clickHandler");
   };
 
-  
   const dataSource = [
     {
       key: "1",
@@ -47,7 +47,8 @@ const TooltipSandBox = () => {
       property: "position",
       type: "string",
       description: "Set alignment position of the tooltip",
-      values: "right | left | up | up-right | up-left | down | down-right | down-left",
+      values:
+        "right | left | up | up-right | up-left | down | down-right | down-left",
       default: "up",
     },
     {
@@ -105,18 +106,13 @@ const TooltipSandBox = () => {
                 <NeoImage
                   src="https://i.picsum.photos/id/1022/200/200.jpg?hmac=MjK2sur6luq2UfxMPWBFBuPyvZYyYLYvQH9kCmEGJRY"
                   alt={"sample image tooltip"}
+                  ariaLabelledBy="img-tooltip-id"
                 />
               </NeoTooltip>
             </div>
             <div className={"tooltip-box"}>
-              <NeoTooltip position={position} text={tooltipText} >
-                <NeoButton
-                  status="default"
-                  onClick={clickHandler}
-                  type={"primary"}
-                >
-                  Button
-                </NeoButton>
+              <NeoTooltip position={position} text={tooltipText}>
+                <NeoButton onClick={clickHandler} ariaLabelledBy="buton-tooltip-id" >Button</NeoButton>
               </NeoTooltip>
             </div>
             <div className={"tooltip-box"}>
@@ -126,20 +122,22 @@ const TooltipSandBox = () => {
                   icon="help"
                   large={false}
                   alt={"icon sample"}
+                  ariaLabelledBy="icon-tooltip-id"
                   onClick={clickHandler}
                 />
               </NeoTooltip>
             </div>
             <div className={"tooltip-box"}>
               <NeoTooltip position={position} text={tooltipText}>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <NeoTextinput label={"Text Input"}  ariaLabelledBy="textinput-tooltip-id" />
               </NeoTooltip>
             </div>
+            <div className={"tooltip-box"}>
+              <NeoTooltip position={position} text={tooltipText}>
+                <NeoTextarea label={"Text Area"}  ariaLabelledBy="textarea-tooltip-id" />
+              </NeoTooltip>
+            </div>
+           
           </form>
         </div>
         <h4>API</h4>

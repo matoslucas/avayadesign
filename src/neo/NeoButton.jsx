@@ -12,12 +12,12 @@ const NeoButton = ({
   onClick,
   shape,
   size,
-  status,
-  type,
+  status="default",
+  styleType="primary",
+  type="button",
 }) => {
-  const [spinner, setSpinner] = useState(false);
-
  
+  const [spinner, setSpinner] = useState(false);
 
   let classArray = ["neo-btn"];
   let toRet;
@@ -30,7 +30,7 @@ const NeoButton = ({
     }
   }, [animation]);
 
-  switch (type) {
+  switch (styleType) {
     case "primary":
       classArray.push("neo-btn-primary");
       classArray.push(`neo-btn-primary--${status}`);
@@ -106,6 +106,7 @@ const NeoButton = ({
       }
       toRet = (
         <button
+          type={type}
           className={classArray.join(" ")}
           aria-label={ariaLabel}
           data-badge={renderBadge(badge)}
@@ -118,6 +119,7 @@ const NeoButton = ({
     default:
       toRet = (
         <button
+          type={type}
           className={classArray.join(" ")}
           aria-labelledby={ariaLabelledBy}
           data-badge={renderBadge(badge)}

@@ -1,10 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuid_v4 } from "uuid";
 
 const NeoTextarea = ({
   label,
   placeholder,
   hint,
+  ariaLabelledBy,
   maxlength = 300,
   defaultValue = "",
   onChange,
@@ -20,6 +21,15 @@ const NeoTextarea = ({
     updateCounter(defaultValue.length);
   }, [defaultValue]);
 
+  const onChangeHandler = (e) => {
+    const val = e.target.value;
+    updateValue(val);
+    updateCounter(val.length);
+    if (onChange) {
+      onChange(e);
+    }
+  };
+
   return (
     <div className="neo-form-control neo-form-control--textarea">
       <div className="neo-input-group">
@@ -33,9 +43,10 @@ const NeoTextarea = ({
           placeholder={placeholder}
           type="text"
           aria-describedby={hint}
+          aria-labelledby={ariaLabelledBy}
           maxLength={maxlength}
           value={value}
-          onChange={onChange}
+          onChange={onChangeHandler}
         />
       </div>
       <div className="neo-input-textarea__helper">

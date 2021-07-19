@@ -13,6 +13,8 @@ const NeoTextinput = ({
   size = 12,
   maxLength = 100,
   minLength = 12,
+  ariaLabelledBy,
+  
 }) => {
   const internalId = uuid_v4();
   const [value, updateValue] = useState(defaultValue);
@@ -28,7 +30,20 @@ const NeoTextinput = ({
     previousValueRef.current = defaultValue;
   });
 
-  
+  const onChangeHandler = (e) => {
+    updateValue(e.target.value);
+    if (onChange) {
+      onChange(e);
+    }
+  };
+
+  const onClearHandler = (e) => {
+    updateValue("");
+    if (onClear) {
+      onClear(e);
+    }
+  };
+
   return (
     <div className="neo-form-control">
       <div className="neo-input-group">
@@ -40,8 +55,9 @@ const NeoTextinput = ({
             placeholder={placeholder}
             type="text"
             aria-describedby={hint}
+            aria-labelledby={ariaLabelledBy}
             value={value}
-            onChange={onChange}
+            onChange={onChangeHandler}
             onKeyUp={onKeyUp}
             onKeyDown={onKeyDown}
             size={size}
@@ -49,7 +65,8 @@ const NeoTextinput = ({
             minLength={minLength}
           ></input>
           <button
-            onClick={onClear}
+            onClick={onClearHandler}
+            type="button"
             aria-label="clear input"
             tabIndex="-1"
             className="neo-input-edit__icon neo-icon-end"
