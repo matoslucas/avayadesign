@@ -147,12 +147,14 @@ const TooltipSandBox = () => {
 
             <div className={"tooltip-box"}>
               <NeoTooltip position={position} text={tooltipText}>
-                <p aria-labelledby="p-tooltip-id" tabIndex="0">
+                <span aria-labelledby="p-tooltip-id" tabIndex="0">
+                <p >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
+                </span>
               </NeoTooltip>
             </div>
           </form>
