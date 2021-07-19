@@ -5,6 +5,13 @@ const NeoImage = ({ src, alt, ariaLabelledBy }) => {
   if (!alt) {
     console.error("NeoImage alt property is mandatory");
   }
-  return <img src={src} className="neo-img neo-img--fluid" alt={alt} aria-labelledby={ariaLabelledBy}></img>;
+  return (
+    <img
+      src={src}
+      className="neo-img neo-img--fluid"
+      alt={alt}
+      aria-labelledby={ariaLabelledBy}
+    ></img>
+  );
 };
 export default NeoImage;

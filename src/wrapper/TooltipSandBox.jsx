@@ -26,14 +26,7 @@ const TooltipSandBox = () => {
   };
 
   const dataSource = [
-    {
-      key: "1",
-      property: "id",
-      type: "string | number",
-      description: "Set id to handle aria screen reader",
-      values: "text/id",
-      default: "-",
-    },
+   
     {
       key: "2",
       property: "multiLineBreakpoint",
