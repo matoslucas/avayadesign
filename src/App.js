@@ -9,6 +9,8 @@ import { NeoNavBar, NeoNavLeftButton, NeoNavLeft, NeoCheckbox } from "./neo";
 import ButtonSandBox from "./wrapper/ButtonSandBox";
 import TooltipSandBox from "./wrapper/TooltipSandBox";
 import IconSandBox from "./wrapper/IconSandBox";
+import TooltipProtoSandBox from "./wrapper/TooltipProtoSandBox";
+import TooltipContextProvider from "./neo/tooltip/TooltipContext";
 
 import Home from "./pages/Home";
 
@@ -50,6 +52,11 @@ const App = () => {
             </Route>
             <Route exact path="/tooltips">
               <TooltipSandBox />
+            </Route>
+            <Route exact path="/tooltips-proto">
+              <TooltipContextProvider>
+                <TooltipProtoSandBox />
+              </TooltipContextProvider>
             </Route>
             <Route exact path="/buttons">
               <ButtonSandBox />

@@ -1,9 +1,14 @@
+import React, {useRef} from "react";
+
 const NeoTooltip = ({
   multiLineBreakpoint = 50,
   position = "up",
   text,
   children,
 }) => {
+  // const computedStyles = window.getComputedStyle(children);
+  // console.log(computedStyles);
+  const elementRef = useRef();
   let { ariaLabelledBy } = children.props;
   if (children.props["aria-labelledby"]) {
     ariaLabelledBy = children.props["aria-labelledby"];

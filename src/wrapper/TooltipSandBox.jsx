@@ -27,15 +27,15 @@ const TooltipSandBox = () => {
 
   const dataSource = [
     {
-      key: "2",
-      property: "multiLineBreakpoint",
-      type: "number",
-      description: "Change multiline break point, it is restricted to 50",
-      values: "50",
-      default: "50",
+      key: "1",
+      property: "text",
+      type: "string",
+      description: "Set text for the tooltip",
+      values: "text",
+      default: "-",
     },
     {
-      key: "3",
+      key: "2",
       property: "position",
       type: "string",
       description: "Set alignment position of the tooltip",
@@ -44,13 +44,15 @@ const TooltipSandBox = () => {
       default: "up",
     },
     {
-      key: "4",
-      property: "text",
-      type: "string",
-      description: "Set text for the tooltip",
-      values: "text",
-      default: "-",
+      key: "3",
+      property: "multiLineBreakpoint",
+      type: "number",
+      description: "Change multiline break point, it is restricted to 50",
+      values: "50",
+      default: "50",
     },
+    
+    
   ];
 
   const columns = [
@@ -88,9 +90,11 @@ const TooltipSandBox = () => {
     <div className="main">
       <div className={"sandbox"}>
         <NeoTooltip position={position} text={tooltipText}>
-          <h4 aria-labelledby="h4-tooltip-id" tabIndex="0">
+          <span aria-labelledby="h4-tooltip-id" tabIndex="0">
+            <h4>
             Tooltip Sandbox
           </h4>
+          </span>
         </NeoTooltip>
         <div className={"buttons-container"}>
           <form
