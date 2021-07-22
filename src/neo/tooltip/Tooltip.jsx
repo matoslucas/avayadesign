@@ -49,6 +49,7 @@ const Tooltip = ({ text = "", position = "top", children }) => {
           {...Child.props}
           onMouseOver={handleOnMouseOver}
           onFocus={handleOnMouseOver}
+          onBlur={handleOnMouseOut}
           onMouseOut={handleOnMouseOut}
         />
       ))}
