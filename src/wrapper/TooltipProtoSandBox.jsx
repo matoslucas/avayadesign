@@ -77,16 +77,16 @@ const TooltipProtoSandBox = () => {
         <NeoTooltipPrototype />
        
         <Tooltip position="top" text="This tooltip is in the TOP position">
-          <button>Hijo</button>
+          <button>Button 1</button>
         </Tooltip>
         <Tooltip position="right" text="This tooltip is in the RIGHT position">
-          <button>Hijo 2</button>
+          <button>Button 2</button>
         </Tooltip>
         <Tooltip position="left" text="This tooltip is in the LEFT position">
-          <button>Hijo 3</button>
+          <button>Button 3</button>
         </Tooltip>
         <Tooltip position="bottom" text="This tooltip is in the BOTTOM position">
-          <button>Hij4</button>
+          <button>Button 4</button>
         </Tooltip>
       </div>
     </div>
