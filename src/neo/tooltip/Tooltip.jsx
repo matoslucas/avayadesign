@@ -24,11 +24,22 @@ const Tooltip = ({ text = "", position = "top", children }) => {
   };
 
   const handleOnMouseOut = (e) => {
-      /*
-    dispatch({
-      type: Action.HIDE,
-    });
-    */
+      
+    let el = e.currentTarget;
+
+    if (el) {
+      let rect = el.getBoundingClientRect();
+
+      dispatch({
+        type: Action.HIDE,
+        state: {
+          visible: false,
+          hoverRect: rect,
+          text: text,
+          position: position,
+        },
+      });
+    }
   };
 
   return (

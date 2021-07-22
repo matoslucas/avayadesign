@@ -144,6 +144,32 @@ const NeoTooltipPrototype = () => {
       };
       type = "bottom";
     }
+    
+    if(x> (document.documentElement.clientWidth - ttRect.width)){
+     
+      // force left
+      x = state.hoverRect.x - ttRect.width;
+      y = state.hoverRect.y + state.hoverRect.height / 2 - ttRect.height / 2;
+      style = {
+        left: `${x}px`,
+        top: `${y}px`,
+      };
+      type = "left";
+    }
+
+    if(y > (document.documentElement.clientHeight - ttRect.height)){
+      // force top
+       x = state.hoverRect.x + state.hoverRect.width / 2 - ttRect.width / 2;
+        y = state.hoverRect.y - ttRect.height;
+
+        style = {
+          left: `${x}px`,
+          top: `${y}px`,
+        };
+        type = "top";
+    }
+
+    
   }
 
   let classNames = {};

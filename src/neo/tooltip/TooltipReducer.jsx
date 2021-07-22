@@ -11,7 +11,7 @@ export const TooltipReducer = (state, action) => {
       return action.state;
     }
     case Action.HIDE: {
-      return { visible: false };
+      return action.state;
     }
 
     default:
